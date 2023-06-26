@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="user/base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Settings</title>
+</head>
+<body>
+   <section>
+       <div class="container">
+         <div class="row">
+           <div class="col-md-12">
+             <div class="card">
+             
+        <div th:if="${session.msg}" class="text-center alert " th:classappend="${'alert-'+session.msg.type}">
+		<span th:text="${session.msg.content}"></span>
+		<th:block th:text="${@sessionHelper.removeMessage()}"></th:block>
+		</div>
+               <div class="card-body">
+                 <h3 class="text-center">Change Password</h3>
+                   <form th:action="@{/user/change-password}" method="post">
+                     <div class="form-group">
+                       <input type="password" name="oldpass"class="form-control" placeholder="Enter old password">
+                     </div>
+                     <div class="form-group">
+                       <input type="password" name="newpass"class="form-control" placeholder="Enter new password">
+                     </div>
+                     <div class="container text-center">
+                       <button type="submit" class="btn btn-success">Change</button>
+                     </div>
+                   </form>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+       <script>
+          $(document).ready(()=>{
+           $('.item').removeClass('active');
+           $('#setting-link').addClass('active');
+          });
+       </script>
+   </section>
+</body>
+</html>

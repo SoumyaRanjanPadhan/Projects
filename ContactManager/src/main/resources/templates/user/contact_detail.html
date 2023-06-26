@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="user/base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>User Page</title>
+</head>
+<body>
+   <section>
+       <div class="card">
+         <div class="card-body">
+             <div class="container text-center">
+               <img style="width:150px;height:150px;" class="profile_picture" src="" th:src="@{'/img/'+${contact.image}}" alt="profile photo">
+               <h3><span th:text="${contact.name}"></span></h3>
+               
+               <table class="table" style="margin-left:50px;">
+                 <tr>
+                   <th scope="col">ID</th>
+                   <td scope="col"><span th:text="${'CM'+contact.id}"></span></td>
+                 </tr>
+                 <tr>
+                   <th scope="col">Email</th>
+                   <td scope="col"><span th:text="${contact.email}"></span></td>
+                 </tr>
+                 <tr>
+                   <th scope="col">Phone</th>
+                   <td scope="col"><span th:text="${contact.phone}"></span></td>
+                 </tr>
+                 <tr>
+                   <th scope="col">Work</th>
+                   <td scope="col"><span th:text="${contact.work}"></span></td>
+                 </tr>
+               </table>
+               
+               <div class="desc">
+                   <th:block th:text="${contact.description}"></th:block>
+               </div>
+               
+             </div>
+         </div>
+         
+       </div>
+   </section>
+</body>
+</html>

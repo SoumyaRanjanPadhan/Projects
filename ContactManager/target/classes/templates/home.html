@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Home Page</title>
+</head>
+<body>
+   <section class="banner">
+       <h1 class="text-center mt-3">Start collecting your contacts in a smarter way</h1>
+       <div class="text-center mt-5 btnn">
+       <a th:href="@{/signup}" class="btn btn-primary text-center text-uppercase">Get started</a>
+       </div>
+   </section>
+</body>
+</html>
